@@ -2,6 +2,8 @@ import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
 import { SettingsTabs } from '@/components/SettingsTabs'
 import { Mail } from 'lucide-react'
 
+import * as FileInput from '@/components/Form/FileInput'
+
 export default function Home() {
   return (
     <>
@@ -35,7 +37,7 @@ export default function Home() {
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
           id="settings"
         >
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="firstName"
@@ -51,7 +53,7 @@ export default function Home() {
               </InputRoot>
             </div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="email"
@@ -69,7 +71,7 @@ export default function Home() {
               />
             </InputRoot>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="email"
@@ -79,8 +81,13 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
+            <FileInput.Root className="flex items-start gap-5">
+              <FileInput.ImagePreview />
+              <FileInput.Trigger />
+              <FileInput.Control />
+            </FileInput.Root>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label className="text-sm font-medium text-zinc-700" htmlFor="role">
               Role
             </label>
@@ -88,7 +95,7 @@ export default function Home() {
               <InputControl id="role" defaultValue="Developer" />
             </InputRoot>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="country"
@@ -96,7 +103,7 @@ export default function Home() {
               Country
             </label>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="timezone"
@@ -104,7 +111,7 @@ export default function Home() {
               Timezone
             </label>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label className="text-sm font-medium text-zinc-700" htmlFor="bio">
               Bio
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
@@ -112,7 +119,7 @@ export default function Home() {
               </span>
             </label>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="projects"
@@ -122,6 +129,10 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
+            <FileInput.Root>
+              <FileInput.Trigger />
+              <FileInput.Control multiple />
+            </FileInput.Root>
           </div>
           <div className="flex items-center justify-end gap-2 pt-5">
             <button
