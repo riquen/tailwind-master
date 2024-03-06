@@ -1,6 +1,6 @@
 export const UsedSpaceWidget = () => {
   return (
-    <div className="flex flex-col gap-4 rounded-lg bg-violet-50 px-4 py-5 dark:bg-zinc-800">
+    <div className="flex flex-col gap-2 rounded-lg bg-violet-50 px-4 py-5 lg:gap-4 dark:bg-zinc-800">
       <div className="space-y-1">
         <span className="text-sm/5 font-medium text-violet-700 dark:text-zinc-100">
           Used space
