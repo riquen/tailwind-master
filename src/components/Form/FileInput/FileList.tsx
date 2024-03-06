@@ -11,7 +11,7 @@ export const FileList = () => {
   return (
     <div ref={parent} className="mt-4 space-y-3">
       {files.map(({ name, size }) => (
-        <FileItem key={name} state="error" name={name} size={size} />
+        <FileItem key={name} state="complete" name={name} size={size} />
       ))}
     </div>
   )
